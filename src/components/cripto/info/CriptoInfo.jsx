@@ -1,6 +1,6 @@
 import { parseFloatNumber } from "../../helpers/numbers";
 
-const CriptoInfo = ({ cripto }) => {
+const CriptoInfo = ({cripto}) => {
     return(
         <div className="info">
             <div className="main-info">

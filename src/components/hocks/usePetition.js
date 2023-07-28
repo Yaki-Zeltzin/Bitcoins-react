@@ -1,22 +1,21 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const usePetition = (endpoint) => {
+const usePetition = (endpoint) =>{
 
-    const API_URL = import.meta.env.VITE_API_URL
+    const API_URL = 'https://api.coincap.io/v2/';
 
-    const [data, setData] = useState()
-
-
-    useEffect(() => {
+    const [data, setData] = useState();
+    
+    useEffect(()=>{
         axios.get(`${API_URL}${endpoint}`)
-            .then(data => {
-                setData(data.data.data)
-            })
-            .catch(e => console.error(e))
-    }, [])
+        .then((data)=>{
+            setData(data.data.data);
+        })
+        .catch((e)=>{console.error(e);})
+    },[]);
 
-    return data
+    return data;
 }
 
-export default usePetition
+export default usePetition;
