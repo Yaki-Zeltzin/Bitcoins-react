@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
+import './CriptoPage.css'
 
 const CriptoPage = () => {
     const API_URL = import.meta.env.VITE_API_URL
@@ -22,7 +23,7 @@ const CriptoPage = () => {
             })
             .catch(e => console.error(e))
     }, [])
-    
+     
     return (
         <>
             <h1>Soy una criptomoneda {params.id}</h1>
@@ -44,8 +45,8 @@ const CriptoPage = () => {
                     {
                         history.map(({ date, priceUsd, time }) => (
                             <tr key={time}>
-                                <td>{date}</td>
-                                <td>{priceUsd}</td>
+                                <td>{new Date(date).toDateString()}</td>
+                                <td>{parseFloat(priceUsd,3)}</td>
                             </tr>
                         ))
                     }
