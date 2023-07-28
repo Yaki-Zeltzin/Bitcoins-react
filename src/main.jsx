@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cuadricula from './components/Cuadricula'
 import './main.css'
-import Pagina404 from './404.jsx'
+import Pagina404 from './components/404.jsx'
 import App from './components/App'
-import Home from './Home'
+import Home from './components/Home'
 import CriptoPage from './components/cripto/CriptoPage'
 
 
